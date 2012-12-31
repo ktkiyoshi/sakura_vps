@@ -62,14 +62,15 @@ for($y=2006;$y<=$y2;$y++) {
 	$i++;
 	$xml .= "	</y$y>\n";
 }
-$xml .= "\n</blog>\n";
-$handle = fopen('/var/www/html/blog_entry_month.xml', 'w');
+$xml .="<count>".$count."</count>";
+$xml .= "</blog>\n";
+$handle = fopen('/var/www/html/entry_month.xml', 'w');
 fwrite($handle, $xml);
 fclose($handle);
 
 //echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
 // XMLファイルの読込み
-$xmldata = simplexml_load_file('/var/www/html/blog_entry_month.xml');
+$xmldata = simplexml_load_file('/var/www/html/entry_month.xml');
 $item = array();
 $i = 1;
 for($y=2006;$y<=$y2;$y++) {
@@ -80,14 +81,9 @@ for($y=2006;$y<=$y2;$y++) {
 	}
 	$i++;
 }
+$count = $xmldata->count;
 mysql_close($link);
 
-$filepath = "/var/www/html/blog_entry_sum.txt";
-$fp = fopen($filepath, "w");
-$string='$count='.$count;
-@fwrite( $fp, $string, strlen($string));
-fclose($fp);
-
-echo $day['year'].'/'.$day['mon'].'/'.$day['mday'].'('.$day['weekday'].') '.$day['hours'].':'.$day['minutes'].' '.$string;
+echo $day['year'].'/'.$day['mon'].'/'.$day['mday'].'('.$day['weekday'].') '.$day['hours'].':'.$day['minutes'].' '.$count;
 echo "\n";
 ?>
