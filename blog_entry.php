@@ -47,7 +47,7 @@ $post_date=$row3['post_date'];
 
 //最初の画像のURLを取得
 preg_match("/http:\/\/[a-z0-9\/\-_\.]+/i",$content,$match);
-$content = $match[0];
+//$content = $match[0];
 
 //XMLファイルの生成
 $i = 1;
