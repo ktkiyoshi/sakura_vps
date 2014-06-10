@@ -1,2 +1,4 @@
 mysql.php
+mysql_local.php
+mysql_server.php
 shell_env
