@@ -5,7 +5,7 @@ $query =
   "SELECT ID, post_title AS title, post_date AS date,
    YEAR(post_date) AS year, DATE_FORMAT(post_date, '%m') AS month, DATE_FORMAT(post_date, '%d') AS day, post_name
   FROM wp_posts WHERE post_type = 'post' AND post_status = 'publish'
-  ORDER BY date DESC";// LIMIT 0,20";
+  ORDER BY date DESC LIMIT 0,10";
 
 $link = mysql_connect($path, $user, $pass);
 mysql_query("SET CHARACTER SET utf8");
