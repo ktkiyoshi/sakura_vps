@@ -30,8 +30,9 @@ $result = mysql_query($query);
     $tweet = $tweets->count;
 
     // google plus
-    $shares = json_decode(file_get_contents('http://api.sharedcount.com/?url='.$url));
-    $gplus = $shares->{'GooglePlusOne'};  
+    //$shares = json_decode(file_get_contents('http://api.sharedcount.com/?url='.$url));
+    //$gplus = $shares->{'GooglePlusOne'};  
+    $gplus = 0;
 
     // hatena
     $hatena = file_get_contents('http://api.b.st-hatena.com/entry.count?url='.urlencode($url));
