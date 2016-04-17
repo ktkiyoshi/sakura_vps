@@ -26,8 +26,9 @@ $result = mysql_query($query);
     if ($comment == '') {$comment = 0;}
     
     // twitter
-    $tweets = json_decode(file_get_contents("http://urls.api.twitter.com/1/urls/count.json?url=".$url));
-    $tweet = $tweets->count;
+    //$tweets = json_decode(file_get_contents("http://urls.api.twitter.com/1/urls/count.json?url=".$url));
+    //$tweet = $tweets->count;
+    $tweet = 0;
 
     // google plus
     //$shares = json_decode(file_get_contents('http://api.sharedcount.com/?url='.$url));

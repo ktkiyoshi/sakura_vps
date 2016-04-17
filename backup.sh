@@ -4,7 +4,8 @@
 cd /var/www/html/
 
 # Back up 
-sudo tar zcf /home/kodamat/backup/backup_`date +%Y%m%d`.tgz *
+#sudo tar zcf /home/kodamat/backup/backup_`date +%Y%m%d`.tgz *
+tar zcf /home/kodamat/backup/backup_`date +%Y%m%d`.tgz *
 
 # Delete old one
 rm /home/kodamat/backup/backup_`date -d '7 days ago' +%Y%m%d`.tgz
